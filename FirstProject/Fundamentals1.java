@@ -18,6 +18,11 @@ public class Fundamentals1
         // initialise instance variables
         x = 0;
     }
+    
+    public static void dataTypes() {
+        String bytedesc = "byte\nByte data is an 8-bit signed two's compliment integer that has a minimu value of -128 and maximum of 127(inclusive).\nIts default value is 0.";
+        System.out.println( bytedesc );
+    }
 
     /**
      * An example of a method - replace this comment with your own

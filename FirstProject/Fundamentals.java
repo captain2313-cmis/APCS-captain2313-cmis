@@ -1,12 +1,17 @@
 
+import java.util.Scanner;
+
 public class Fundamentals
 {
     public static void main(String[] args) {
+        //Title
         System.out.println("APCS Fundamentals 1\n");
         
+        //dataTypes
         System.out.println("----------------\n" + "dataTypes\n");
         dataTypes();
         
+        //Addition and Multiplication(hard-coded)
         System.out.println("----------------\n" + "Calling add and multiply methods using hard coded variables as arguments.\n\nFor integers:");
         int sum1 = add(6, 2);
         int prod1 = mul(6, 2);
@@ -17,7 +22,28 @@ public class Fundamentals
         double prod2 = mul_d(6.1d, 2.3d);
         System.out.println("6.1 + 2.3 = " + sum2 + "\n6.1 * 2.3 = " + prod2 + "\n");
         
-        System.out.println("----------------\n" + "Calling subtract and divide methods using user inpot variables as arguments.");
+        //Subtraction and Division(user-input)
+        Scanner user_input = new Scanner(System.in);
+        
+        System.out.println("----------------\n" + "Calling subtract and divide methods using user input variables as arguments.");
+        System.out.print("Type an integer that will be used as a minuend and dividend: ");
+        int num_1 = (int) user_input.nextInt();
+        System.out.print("Type an integer that will be used as a subtrahend and divisor: ");
+        int num_2 = (int) user_input.nextInt();
+        
+        int diff1 = sub(num_1, num_2);
+        int quo1 = div(num_1, num_2);
+        System.out.println(num_1 + " - " + num_2 + " = " + diff1 + "\n" + num_1 + " / " + num_2 + " = " + quo1 + "\n");
+        
+        System.out.println("For doubles:");
+        System.out.print("Type a decimal number that will be used as a minuend and dividend: ");
+        double num_3 = (double) user_input.nextDouble();
+        System.out.print("Type a decimal number that will be used as a subtrahend and divisor: ");
+        double num_4 = (double) user_input.nextDouble();
+        
+        double diff2 = sub_d(num_3, num_4);
+        double quo2 = div_d(num_3, num_4);
+        System.out.println(num_3 + " - " + num_4 + " = " + diff2 + "\n" + num_3 + " / " + num_4 + " = " + quo2 + "\n");
     }
     
     //Data Types
@@ -78,11 +104,14 @@ public class Fundamentals
         return prod;
     }
     
-    public static double div(double a, double b) {
+    public static double div_d(double a, double b) {
         double quo = a/b;
         
         return quo;
     }
     
-    
+    //Conditionals
+    public static void compare(int a, int b) {
+        
+    }
 }

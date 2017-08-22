@@ -63,55 +63,59 @@ public class Fundamentals
     //mathematical functions for integers
     public static int add(int a, int b) {
         int sum = a + b;
-        
         return sum;
     }
     
     public static int sub(int a, int b) {
         int diff = a - b;
-        
         return diff;
     }
     
     public static int mul(int a, int b) {
         int prod = a*b;
-        
         return prod;
     }
     
     public static int div(int a, int b) {
         int quo = a/b;
-        
         return quo;
     }
     
     //mathematical functions for doubles
     public static double add_d(double a, double b) {
         double sum = a + b;
-        
         return sum;
     }
     
     public static double sub_d(double a, double b) {
         double diff = a - b;
-        
         return diff;
     }
     
     public static double mul_d(double a, double b) {
         double prod = a*b;
-        
         return prod;
     }
     
     public static double div_d(double a, double b) {
         double quo = a/b;
-        
         return quo;
     }
     
     //Conditionals
     public static void compare(int a, int b) {
-        
+        if (a > b) {
+            System.out.println("The value of a is " + a + " and it is greater than b whose value is " + b + ".");
+        }
+        else if (a < b) {
+            System.out.println("The value of a is " + a + " and it is less than b whose value is " + b + ".");
+        }
+        else {
+            System.out.println("The value of a is " + a + " and it is equal to b whose value is " + b + ".");
+        }
+    }
+    
+    public static int evenOddSero(int a) {
+       return -1;
     }
 }

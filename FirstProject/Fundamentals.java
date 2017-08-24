@@ -1,6 +1,6 @@
 
 import java.util.Scanner;
-
+import java.util.Random;
 public class Fundamentals
 {
     public static void main(String[] args) {
@@ -44,6 +44,14 @@ public class Fundamentals
         double diff2 = sub_d(num_3, num_4);
         double quo2 = div_d(num_3, num_4);
         System.out.println(num_3 + " - " + num_4 + " = " + diff2 + "\n" + num_3 + " / " + num_4 + " = " + quo2 + "\n");
+        
+        //Conditionals
+        System.out.println("----------------\n" + "Calling conditionals.");
+        System.out.println("i. compare\na = 10 and b = 15.");
+        compare(10, 15);
+        
+        System.out.println("\nii. evenOddZero\nIt will return 1 if the number is even, -1 if it is odd, and 0 if it is zero\nnumber used: 7");
+        System.out.println(evenOddZero(7));
     }
     
     //Data Types
@@ -115,7 +123,35 @@ public class Fundamentals
         }
     }
     
-    public static int evenOddSero(int a) {
-       return -1;
+    public static int evenOddZero(int a) {
+        if (a%2 == 0) {
+           return 1;
+        }
+        else if (a%2 != 0) {
+            return -1;
+        }
+        else {
+           return 0;
+        }
+    }
+    
+    //Loops
+    public static void squareTable() {
+        Random rand = new Random();
+        
+        for (int a = 1; a <= 10; a++) {
+            System.out.println(a + "\t" + (int) Math.pow(a, 2) + "\t" + (rand.nextInt(((int) Math.pow(a, 2) - a) + 1) + a));
+        }
+    }
+    
+    public static String triangle(int a) {
+        for (; a > 0; a--) {
+            
+        }
+        return "1";
+    }
+    
+    public static void test() {
+        System.out.println(9%3);
     }
 }

@@ -144,14 +144,40 @@ public class Fundamentals
         }
     }
     
-    public static String triangle(int a) {
+    public static int triangle(int a) {
+        int result = 0;
+        
         for (; a > 0; a--) {
-            
+            result += a;
         }
-        return "1";
+        
+        return result;
+    }
+    
+    public static int pyramid(int a) {
+        int result = 0;
+        
+        for (; a > 0; a--) {
+            result += a*a;
+        }
+        
+        return result;
+    }
+    
+    //The Hard One
+    public static String checkerboard(int h, int w) {
+        String lid = "";
+        
+        for (; w > 0; w--) {
+            lid += "-";
+        }
+        
+        lid = "+" + lid + "+";
+        
+        return lid;
     }
     
     public static void test() {
-        System.out.println(9%3);
+        System.out.println(pyramid(3));
     }
 }

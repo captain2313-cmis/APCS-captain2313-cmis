@@ -168,16 +168,49 @@ public class Fundamentals
     public static String checkerboard(int h, int w) {
         String lid = "";
 
-        for (; w > 0; w--) {
+        while (w > 0) {
             lid += "-";
+            w--;
         }
 
         lid = "+" + lid + "+";
 
+        int h_copy = h;
+        int w_copy = 0;
+        String body = "";
+        for (;h_copy > 0; h_copy--) {
+            w_copy = w;
+            
+            String row = "";
+            for (int w_copy2 = w; w_copy2 > 0; w_copy2--) {
+                if ((h - h_copy)%2 /= 0) {
+                    for (;w_copy > 0; w_copy--) {
+                        if ((w - w_copy)%2 = 0) {
+                            row += "#";
+                        }
+                        else {
+                            row += " ";
+                        }
+                    }
+                }
+                else {
+                    for (;w_copy > 0; w_copy--) {
+                        if ((w - w_copy)%2 = 0) {
+                            row += " ";
+                        }
+                        else {
+                            row += "#";
+                        }
+                    }
+                }
+            }
+            row = "|" + row + "|";
+            body += row;
+        }
         return lid;
     }
 
     public static void test() {
-        System.out.println(pyramid(3));
+        System.out.println(checkerboard(4, 4));
     }
 }

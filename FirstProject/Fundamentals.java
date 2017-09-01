@@ -176,16 +176,17 @@ public class Fundamentals
         lid = "+" + lid + "+";
 
         int h_copy = h;
-        int w_copy = 0;
+        int w_copy = 4;
         String body = "";
         for (;h_copy > 0; h_copy--) {
             w_copy = w;
-            
+            int w_copy2 = w;
+
             String row = "";
-            for (int w_copy2 = w; w_copy2 > 0; w_copy2--) {
-                if ((h - h_copy)%2 /= 0) {
+            for (; w_copy2 > 0; w_copy2--) {
+                if ((h - h_copy)%2 == 0) {
                     for (;w_copy > 0; w_copy--) {
-                        if ((w - w_copy)%2 = 0) {
+                        if ((w - w_copy)%2 == 0) {
                             row += "#";
                         }
                         else {
@@ -195,7 +196,7 @@ public class Fundamentals
                 }
                 else {
                     for (;w_copy > 0; w_copy--) {
-                        if ((w - w_copy)%2 = 0) {
+                        if ((w - w_copy)%2 == 0) {
                             row += " ";
                         }
                         else {
@@ -207,10 +208,12 @@ public class Fundamentals
             row = "|" + row + "|";
             body += row;
         }
-        return lid;
+        String grid = lid + "\n" + body + "\n" + lid;
+
+        return body;
     }
 
     public static void test() {
-        System.out.println(checkerboard(4, 4));
+        System.out.println(checkerboard(3, 4));
     }
 }

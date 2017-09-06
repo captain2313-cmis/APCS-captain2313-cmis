@@ -209,7 +209,6 @@ public class Fundamentals
             body += row;
         }
         String grid = lid + "\n" + body + "\n" + lid;
-
         return body;
     }
 

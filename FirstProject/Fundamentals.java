@@ -165,54 +165,97 @@ public class Fundamentals
     }
 
     //The Hard One
-    public static String checkerboard(int h, int w) {
-        String lid = "";
+    /*    
+     *    public static String checkerboard(int h, int w) {
+     *        String lid = "";
+     *
+     *        while (w > 0) {
+     *            lid += "-";
+     *            w--;
+     *        }
+     *
+     *        lid = "+" + lid + "+";
+     *
+     *        int hCopy = h;
+     *        int wCopy = 4;
+     *        String body = "";
+     *        for (;hCopy > 0; hCopy--) {
+     *            wCopy = w;
+     *            int wCopy2 = w;
+     *
+     *            String row = "";
+     *            for (; wCopy2 > 0; wCopy2--) {
+     *                if ((h - hCopy)%2 == 0) {
+     *                    for (;wCopy > 0; wCopy--) {
+     *                        if ((w - wCopy)%2 == 0) {
+     *                            row += "#";
+     *                        }
+     *                        else {
+     *                            row += " ";
+     *                        }
+     *                    }
+     *                }
+     *                else {
+     *                    for (;wCopy > 0; wCopy--) {
+     *                        if ((w - wCopy)%2 == 0) {
+     *                            row += " ";
+     *                        }
+     *                        else {
+     *                            row += "#";
+     *                        }
+     *                    }
+     *                }
+     *            }
+     *            row = "|" + row + "|";
+     *            body += row;
+     *        }
+     *        String grid = lid + "\n" + body + "\n" + lid;
+     *        return body;
+     *         }
+     */
 
-        while (w > 0) {
+    public static String checkerboard(int h, int w){
+        String body = ""; 
+        double totalHashes = ((h*w)+1)/2;
+        double hashadded = 0;
+        double intLocation = Math.random();
+        boolean isIntInserted = false;
+         
+        String lid = "+";
+        for(int x = 0; x < w; x++) {
             lid += "-";
-            w--;
         }
-
-        lid = "+" + lid + "+";
-
-        int h_copy = h;
-        int w_copy = 4;
-        String body = "";
-        for (;h_copy > 0; h_copy--) {
-            w_copy = w;
-            int w_copy2 = w;
-
-            String row = "";
-            for (; w_copy2 > 0; w_copy2--) {
-                if ((h - h_copy)%2 == 0) {
-                    for (;w_copy > 0; w_copy--) {
-                        if ((w - w_copy)%2 == 0) {
-                            row += "#";
-                        }
-                        else {
-                            row += " ";
-                        }
+        lid += "+";
+        
+        body += lid + "\n";
+        for(int y = 0; y < h; y++) {
+            body += "|";
+            for(int x = 0; x < w; x++) {
+                boolean g = ((y % 2) + (x % 2)) != 1;
+                if(g) {
+                    hashadded++;
+                    double prob = hashadded / totalHashes;
+                    if(intLocation <  prob && isIntInserted == false) {
+                        body += (int)(Math.random() * 10);
+                        isIntInserted = true;
+                    }
+                    else{
+                        body += "#";
                     }
                 }
                 else {
-                    for (;w_copy > 0; w_copy--) {
-                        if ((w - w_copy)%2 == 0) {
-                            row += " ";
-                        }
-                        else {
-                            row += "#";
-                        }
-                    }
+                    body += " ";
                 }
+
             }
-            row = "|" + row + "|";
-            body += row;
+            body += "|\n";
         }
-        String grid = lid + "\n" + body + "\n" + lid;
+        body += lid;
+        
         return body;
     }
 
     public static void test() {
-        System.out.println(checkerboard(3, 4));
+
     }
 }

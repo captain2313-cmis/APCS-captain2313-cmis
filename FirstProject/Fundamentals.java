@@ -52,6 +52,11 @@ public class Fundamentals
 
         System.out.println("\nii. evenOddZero\nIt will return 1 if the number is even, -1 if it is odd, and 0 if it is zero\nnumber used: 7");
         System.out.println(evenOddZero(7));
+        
+        //The Hard One
+        System.out.println("----------------\n" + "Checkerboard");
+        System.out.println("Given height: 3\nGiven width: 5");
+        System.out.println(checkerboard(3, 5));
     }
 
     //Data Types

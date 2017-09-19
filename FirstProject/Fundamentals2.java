@@ -82,5 +82,11 @@ public class Fundamentals2 {
         return a[a.length/2];
     }
     
-    
+    public static int[] copy(int[] array) {
+        int[] arrayCopy = new int[array.length]; 
+        for (int i = 0; i < array.length; i ++) {
+            arrayCopy[i] = array[i];
+        }
+        return arrayCopy;
+    }
 }

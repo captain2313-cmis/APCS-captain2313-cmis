@@ -125,7 +125,28 @@ public class Fundamentals2 {
         for (int i = 0; i < a.length; i++) {
             resultArray[i] = a[i];
         }
-        //for (int i = a.length
+        for (int i1 = a.length, i2 = 0; i1 < (a.length + b.length); i1++, i2++) {
+            resultArray[i1] = b[i2];
+        }
+        return resultArray;
+    }
+    
+    //Merge**
+    public static int[] merge(int[] a, int[] b) {
+        int[] resultArray = new int[a.length + b.length];
+        boolean isOnA = true;
+        for (int i = 0, iA = 0, iB = 0; i < (a.length + b.length); i++) {
+            if (isOnA) {
+                resultArray[i] = a[iA]; //put this in while loop(for both a and b)
+                iA++;
+                isOnA = false;
+            }
+            else {
+                resultArray[i] = b[iB];
+                iB++;
+                isOnA = true;
+            }
+        }
         return resultArray;
     }
 }

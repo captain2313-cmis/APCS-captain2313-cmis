@@ -2,7 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.lang.reflect.*;
 public class MyWorld extends World
 {
-    Class[] robotClasses = new Class[]{Cap.class};
+    Class[] robotClasses = new Class[]{Cap3.class};
     public MyWorld() throws NoSuchMethodException
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.

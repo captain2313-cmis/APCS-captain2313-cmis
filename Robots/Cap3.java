@@ -1,13 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Color;
-public class Cap extends Robot
+public class Cap3 extends Robot
 {
-    public Cap(){
-        super(Color.red);
+    public Cap3(){
+        super(Color.orange);
     }
 
     public void init(){
-
+        boolean isUp = true;
     }
 
     /**
@@ -25,32 +25,17 @@ public class Cap extends Robot
         if (isClearRight()) {
             right();
         }
-        else if (isClearUp()) {
-            for (int i = 0; i <= 4; i++) {
-                up();
-            }
-        }
-        else if (isClearDown()) {
-            for (int i = 0; i <= 4; i++) {
-                down();
-            }
-        }
         else {
-            for (int i = 0; i <= 4; i++) {
-                for (int a = 0; a <= 4; a++) {
-                    left();
-                }
-                for (int b = 0; b <= 4; b++) {
-                    down();
-                }
-                for (int c = 0; c <= 2; c++) {
-                    right();
-                }
-                for (int d = 0; d <= 2; d++) {
+            if (isClearUp()) {
+                if (!isClearRight()) {
                     up();
                 }
             }
+            else {
+                if (!isClearRight()) {
+                    down();
+                }
+            }
         }
-
     }
 }

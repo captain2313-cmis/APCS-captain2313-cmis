@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Color;
-public class Cap3 extends Robot
+public class RobotTemplate extends Robot
 {
-    public Cap3(){
-        super(Color.orange);
+    public RobotTemplate(){
+        super(Color.black);
     }
-
+    
     public void init(){
-        boolean isUp = true;
+        
     }
-
+    
     /**
      * What your robot can do:
      * right() => move 1 to the right
@@ -20,14 +20,9 @@ public class Cap3 extends Robot
      * isClearRight() => true means no block to the left
      * isClearUp() => true means no block up
      * isClearDown() => true means no block down
+     * getX() => returns x coordinate of robot
+     * get() => returns y coordinate of robot 
      */
-    public void behave() {
-        if (!isClearRight()) {
-            if (!isClearDown()) {
-                up();
-            }
-            down();
-        }
-        right();
+    public void behave(){
     }
 }

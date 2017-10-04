@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Fundamentals2 {
     //MAIN
     public static void main(String[] args) {
@@ -82,6 +84,28 @@ public class Fundamentals2 {
         return a[a.length/2];
     }
 
+    //randomInts
+    public static int[] randomInts(int n, int min, int max) {
+        int[] resultArray = new int[n];
+        Random rand = new Random();
+        int randomInt = rand.nextInt((max - min) +1) + min;
+        for (int i = 0; i < n; i++) {
+            resultArray[i] = randomInt;
+        }
+        return resultArray;
+    }
+
+    //randomDoubles
+    public static double[] randomDoubles(int n, int min, int max) {
+        double[] resultArray = new double[n];
+        Random rand = new Random();
+        double randomDouble = (double) (rand.nextInt((max - min)) + min) + rand.nextFloat();
+        for (int i = 0; i < n; i++) {
+            resultArray[i] = randomDouble;
+        }
+        return resultArray;
+    }
+
     //Copy
     public static int[] copy(int[] array) {
         int[] arrayCopy = new int[array.length]; 
@@ -106,7 +130,7 @@ public class Fundamentals2 {
         }
         return arrayCopy;
     }
-    
+
     //Pairs
     public static int[] pairs(int n) {
         int[] pairsArray = new int[2*n];
@@ -118,7 +142,7 @@ public class Fundamentals2 {
         }
         return pairsArray;
     }
-    
+
     //concat
     public static int[] concat(int[] a, int[] b) {
         int[] resultArray = new int[a.length + b.length];
@@ -130,23 +154,49 @@ public class Fundamentals2 {
         }
         return resultArray;
     }
-    
+
     //Merge**
     public static int[] merge(int[] a, int[] b) {
         int[] resultArray = new int[a.length + b.length];
         boolean isOnA = true;
         for (int i = 0, iA = 0, iB = 0; i < (a.length + b.length); i++) {
             if (isOnA) {
-                resultArray[i] = a[iA]; //put this in while loop(for both a and b)
-                iA++;
-                isOnA = false;
+                if (iA < a.length) {
+                    resultArray[i] = a[iA]; //put this in while loop(for both a and b)
+                    iA++;
+                    isOnA = false;
+                }
+                else {
+                    iA++;
+                    isOnA = false;
+                }
             }
             else {
-                resultArray[i] = b[iB];
-                iB++;
-                isOnA = true;
+                if (iB < b.length) {
+                    resultArray[i] = b[iB];
+                    iB++;
+                    isOnA = true;
+                }
+                else {
+                    iB++;
+                    isOnA = true;
+                }
             }
         }
         return resultArray;
     }
+    
+    //reverse
+    public static void reverse(int[] array) {
+        int[] resultArray = new int[array.length];
+        for (int i1 = array.length - 1, i2 = 0; i1 >= 0; i1--, i2++) {
+            resultArray[i2] = array[i1];
+        }
+        array = resultArray;
+    }
+    
+    //subArray
+    /*public static intp[] subArray (int[] array, int start, int stop) {
+        
+    }*/
 }

@@ -196,7 +196,15 @@ public class Fundamentals2 {
     }
     
     //subArray
-    /*public static intp[] subArray (int[] array, int start, int stop) {
+    public static int[] subArray (int[] array, int start, int stop) {
+        int[] resultArray = new int[stop - start + 1];
+        for (int i1 = 0, i2 = start; i2 <= stop; i1++, i2++) {
+            resultArray[i1] = array[i2];
+        }
+        return resultArray;
+    }
+    
+    /*public static int [] compareArrays(int[] a, int[] b) {
         
     }*/
 }

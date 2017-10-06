@@ -185,7 +185,7 @@ public class Fundamentals2 {
         }
         return resultArray;
     }
-    
+
     //reverse
     public static void reverse(int[] array) {
         int[] resultArray = new int[array.length];
@@ -194,7 +194,7 @@ public class Fundamentals2 {
         }
         array = resultArray;
     }
-    
+
     //subArray
     public static int[] subArray (int[] array, int start, int stop) {
         int[] resultArray = new int[stop - start + 1];
@@ -203,8 +203,83 @@ public class Fundamentals2 {
         }
         return resultArray;
     }
-    
-    /*public static int [] compareArrays(int[] a, int[] b) {
-        
-    }*/
+
+    //comareArrays
+    public static int[] compareArrays(int[] a, int[] b) {
+        int sum1 = 0, sum2 = 0;
+        for (int i = 0; i < a.length; i++) {
+            sum1 += a[i];
+        }
+        for (int i = 0; i < b.length; i++) {
+            sum2 += b[i];
+        }
+        if (sum1 > sum2) {
+            return a;
+        }
+        else {
+            return b;
+        }
+    }
+
+    //minimize
+    public static int[] minimize(int[] array, int threshold) {
+        int[] resultArray = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > threshold) {
+                resultArray[i] = threshold;
+            }
+            else {
+                resultArray[i] = array[i];
+            }
+        }
+        return resultArray;
+    }
+
+    //maximize
+    public static void maximize(int[] array, int threshold) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < threshold) {
+                array[i] = threshold;
+            }
+            else {
+                array[i] = array[i];
+            }
+        }
+    }
+
+    //maxMerge
+    public static double[] maxMerge(double[] a, double[] b) {
+        int minLen = 0;
+        int maxLen = 0;
+        boolean aIsShorter = true;
+        if (a.length < b.length) {
+            minLen = a.length;
+            maxLen = b.length;
+            aIsShorter = true;
+        }
+        else {
+            minLen = b.length;
+            maxLen = a.length;
+            aIsShorter = false;
+        }
+        double[] r = new double[maxLen];
+        int i = 0;
+        for (; i < minLen; i++) {
+            if (a[i] > b[i]) {
+                r[i] = a[i];
+            }
+            else {
+                r[i] = b[i];
+            }
+        }
+        for (; i < maxLen; i++) {
+            if (aIsShorter) {
+                r[i] = b[i];
+            }
+            else {
+                r[i] = a[i];
+            }
+        }
+        return r;
+    }
 }

@@ -118,7 +118,7 @@ public class Fundamentals3 {
             }
         }
     }
-    
+
     public static void print2DArray(double[][] array, boolean rowMajor) {
         if (rowMajor) {
             for (int i1 = 0; i1 < array.length; i1++) {
@@ -137,8 +137,8 @@ public class Fundamentals3 {
             }
         }
     }
-    
-        public static void print2DArray(boolean[][] array, boolean rowMajor) {
+
+    public static void print2DArray(boolean[][] array, boolean rowMajor) {
         if (rowMajor) {
             for (int i1 = 0; i1 < array.length; i1++) {
                 for (int i2 = 0; i2 < array[i1].length; i2++) {
@@ -156,8 +156,8 @@ public class Fundamentals3 {
             }
         }
     }
-    
-        public static void print2DArray(String[][] array, boolean rowMajor) {
+
+    public static void print2DArray(String[][] array, boolean rowMajor) {
         if (rowMajor) {
             for (int i1 = 0; i1 < array.length; i1++) {
                 for (int i2 = 0; i2 < array[i1].length; i2++) {
@@ -175,7 +175,7 @@ public class Fundamentals3 {
             }
         }
     }
-    
+
     //6. snakePrint
     public static void snakePrint(int[][] arr) {
         for (int i1 = 0; i1 < arr.length; i1++) {
@@ -191,16 +191,30 @@ public class Fundamentals3 {
             }
         }
     }
-    
+
     //7. locate
-    /*public static String[][] locate(String[][] arr) {
-        
-        boolean foundHash = false;
-        while (!foundHash) {
-            
+    public static String[][] locate(String[][] arr) {
+        boolean isHashReplaced = false;
+        double intLocation = Math.random();
+        int totalHashes = (arr.length*arr[0].length)/2;
+        int hashCounted = 0;
+        double prob = hashCounted/totalHashes;
+        for (int i1 = 0; !isHashReplaced; i1++) {
+            for (int i2 = 0; !isHashReplaced; i2++) {
+                if (intLocation > prob) {
+                    if (arr[i1][i2] == "#") {
+                        hashCounted += 1;
+                    }
+                }
+                else {
+                    //replace
+                    isHashReplaced = true;
+                }
+            }
         }
-    }*/
-    
+        return arr;
+    }
+
     //8. replace
     public static int[][] replace(int[][] array, int threshold, int newValue) {
         int[][] resultArray = new int[array.length][array[0].length];
@@ -216,8 +230,54 @@ public class Fundamentals3 {
         }
         return resultArray;
     }
-    
+
     //9. shift
+    public static double[][] shift(double[][] arr, int row) {
+        double[] shiftRow = new double[arr[0].length];
+        Random rand = new Random();
+        double randomDouble = (double) (rand.nextInt(10)) + rand.nextFloat();
+        for (int i = 0; i < shiftRow.length; i++) {
+            shiftRow[i] = randomDouble;
+        }
+        double[][] resultArray = new double[arr.length][arr[0].length];
+        for (int i1 = 0, i2 = 0; i1 < arr.length; i1++, i2++) {
+            if (i1 == row) {
+                resultArray[i1] = shiftRow;
+                i2 -= 1;
+            }
+            else {
+                for (int i3 = 0; i3 < arr[0].length; i3++) {
+                    resultArray[i1][i3] = arr[i2][i3];
+                }
+            }
+        }
+        return resultArray;
+    }
+
     //10. rotate
+    public static double[][] rotate(double[][] arr) {
+        double[][] resultArray = new double[arr[0].length][arr.length];
+        for (int i1 = 0; i1 < resultArray.length; i1++) {
+            for (int i2 = 0; i2 < resultArray[0].length; i2++) {
+                resultArray[i1][i2] = arr[i2][i1];
+            }
+        }
+        return resultArray;
+    }
+
     //11. analyze
+    public static boolean[][] analyze(double[][] array, double threshold) {
+        boolean[][] resultArray = new boolean[array.length][array[0].length];
+        for (int i1 = 0; i1 < array.length; i1++) {
+            for (int i2 = 0; i2 < array[0].length; i2++) {
+                if (array[i1][i2] > threshold) {
+                    resultArray[i1][i2] = true;
+                }
+                else {
+                    resultArray[i1][i2] = false;
+                }
+            }
+        }
+        return resultArray;
+    }
 }

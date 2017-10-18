@@ -240,8 +240,10 @@ public class Fundamentals3 {
                     }
                 }
                 else {
-                    arr[i1][i2] = randomIntStr;
-                    isHashReplaced = true;
+                    if (arr[i1][i2] == "#") {
+                        arr[i1][i2] = randomIntStr;
+                        isHashReplaced = true;
+                    }
                 }
             }
         }

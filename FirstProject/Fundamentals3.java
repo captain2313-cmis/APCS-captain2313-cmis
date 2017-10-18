@@ -199,6 +199,39 @@ public class Fundamentals3 {
         int totalHashes = (arr.length*arr[0].length)/2;
         int hashCounted = 0;
         double prob = hashCounted/totalHashes;
+        Random rand = new Random();
+        int randomInt = rand.nextInt(10);
+        String randomIntStr = "";
+        if (randomInt == 0) {
+            randomIntStr = "0";
+        }
+        else if (randomInt == 1) {
+            randomIntStr = "1";
+        }
+        else if (randomInt == 2) {
+            randomIntStr = "2";
+        }
+        else if (randomInt == 3) {
+            randomIntStr = "3";
+        }
+        else if (randomInt == 4) {
+            randomIntStr = "4";
+        }
+        else if (randomInt == 5) {
+            randomIntStr = "5";
+        }
+        else if (randomInt == 6) {
+            randomIntStr = "6";
+        }
+        else if (randomInt == 7) {
+            randomIntStr = "7";
+        }
+        else if (randomInt == 8) {
+            randomIntStr = "8";
+        }
+        else {
+            randomIntStr = "9";
+        }
         for (int i1 = 0; !isHashReplaced; i1++) {
             for (int i2 = 0; !isHashReplaced; i2++) {
                 if (intLocation > prob) {
@@ -207,7 +240,7 @@ public class Fundamentals3 {
                     }
                 }
                 else {
-                    //replace
+                    arr[i1][i2] = randomIntStr;
                     isHashReplaced = true;
                 }
             }

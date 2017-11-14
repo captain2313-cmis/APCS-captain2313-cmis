@@ -88,6 +88,8 @@ public class harryPotter extends Robot
                                 setData(6, getX() - 1);
                                 setData(0, 3);
                                 setData(1, 0);
+                                setData(2, 11);
+                                setData(3, 0);
                             }
                         }
                     }
@@ -123,6 +125,8 @@ public class harryPotter extends Robot
                             setData(6, getX() - 1);
                             setData(0, 3);
                             setData(1,0);
+                            setData(2, 11);
+                            setData(3, 0);
                             right();
                         }
                     }
@@ -132,20 +136,92 @@ public class harryPotter extends Robot
                     if (getData(0) == 3) {
                         //3.0 scan top try to get in
                         if (getData(1) == 0) {
-
+                            if (getData(3) < getData(2)) {
+                                if (isClearDown()) {
+                                    setData(0, 4);
+                                    setData(1, 0);
+                                    down();
+                                }
+                                else {
+                                    setData(3, getData(3) + 1);
+                                    right();
+                                }
+                            }
+                            else {
+                                setData(1, 1);
+                                setData(3, 0);
+                                down();
+                            }
+                        }
+                        //3.1 scan right try to get in
+                        else if (getData(1) == 1) {
+                            if (getData(3) < getData(2)) {
+                                if (isClearLeft()) {
+                                    setData(0, 4);
+                                    setData(1, 0);
+                                    left();
+                                }
+                                else {
+                                    setData(3, getData(3) + 1);
+                                    down();
+                                }
+                            }
+                            else {
+                                setData(1, 2);
+                                setData(3, 0);
+                                left();
+                            }
+                        }
+                        //3.2
+                        else if (getData(1) == 2) {
+                            if (getData(3) < getData(2)) {
+                                if (isClearUp()) {
+                                    setData(0, 4);
+                                    setData(1, 0);
+                                    up();
+                                }
+                                else {
+                                    setData(3, getData(3) + 1);
+                                    left();
+                                }
+                            }
+                            else {
+                                setData(1, 3);
+                                setData(3, 0);
+                                up();
+                            }
+                        }
+                        //3.3
+                        else {
+                            if (getData(3) < getData(2)) {
+                                if (isClearRight()) {
+                                    setData(0, 4);
+                                    setData(1, 0);
+                                    right();
+                                }
+                                else {
+                                    setData(3, getData(3) + 1);
+                                    up();
+                                }
+                            }
+                            else {
+                                setData(1, 0);
+                                setData(3, 0);
+                                right();
+                            } 
                         }
                     }
                 }
             }
-        }
-        //3.1 scan right try to get in
-        //3.2 scan bottom try to get in
-        //3.3 scan left try to get in
+            //
+            //3.2 scan bottom try to get in
+            //3.3 scan left try to get in
 
-        //4 get in
-        //4.1 top left corner
-        
-        //5 Snake inside room
+            //4 get in
+            //4.1 top left corner
+
+            //5 Snake inside room
+        }
     }
 
     public static void locateOpening(int x, int y) {

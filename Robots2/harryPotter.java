@@ -120,8 +120,8 @@ public class harryPotter extends Robot
                             up();
                         }
                         else{
-                            setData(4, getX() + 11);
-                            setData(5, getY() + 12);
+                            setData(4, getX() + 1);
+                            setData(5, getY() - 2);
                             setData(6, getX() - 1);
                             setData(0, 3);
                             setData(1,0);
@@ -158,7 +158,7 @@ public class harryPotter extends Robot
                             if (getData(3) < getData(2)) {
                                 if (isClearLeft()) {
                                     setData(0, 4);
-                                    setData(1, 0);
+                                    setData(1, 1);
                                     left();
                                 }
                                 else {
@@ -177,7 +177,7 @@ public class harryPotter extends Robot
                             if (getData(3) < getData(2)) {
                                 if (isClearUp()) {
                                     setData(0, 4);
-                                    setData(1, 0);
+                                    setData(1, 2);
                                     up();
                                 }
                                 else {
@@ -196,7 +196,7 @@ public class harryPotter extends Robot
                             if (getData(3) < getData(2)) {
                                 if (isClearRight()) {
                                     setData(0, 4);
-                                    setData(1, 0);
+                                    setData(1, 3);
                                     right();
                                 }
                                 else {
@@ -211,14 +211,37 @@ public class harryPotter extends Robot
                             } 
                         }
                     }
+                    else {
+                        //4
+                        if (getData(0) == 4) {
+                            //4.0 down
+                            if (getData(1) == 0) {
+                                setData(1, 4);
+                                down();
+                            }
+                            //4.1 left
+                            else if (getData(1) == 1) {
+                                setData(1, 4);
+                                left();
+                            }
+                            //4.2 up
+                            else if (getData(1) == 2) {
+                                setData(1, 4);
+                                up();
+                            }
+                            //4.3 right
+                            else if (getData(1) == 3) {
+                                setData(1, 4);
+                                right();
+                            }
+                            //4.4 get to top left corner of room(use coordinates
+                            else {
+                                
+                            }
+                        }
+                    }
                 }
             }
-            //
-            //3.2 scan bottom try to get in
-            //3.3 scan left try to get in
-
-            //4 get in
-            //4.1 top left corner
 
             //5 Snake inside room
         }

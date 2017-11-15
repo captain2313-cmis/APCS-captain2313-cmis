@@ -83,9 +83,6 @@ public class harryPotter extends Robot
                                 right();
                             }
                             else {
-                                setData(4, getX() + 11);
-                                setData(5, getY() + 12);
-                                setData(6, getX() - 1);
                                 setData(0, 3);
                                 setData(1, 0);
                                 setData(2, 11);
@@ -120,9 +117,6 @@ public class harryPotter extends Robot
                             up();
                         }
                         else{
-                            setData(4, getX() + 1);
-                            setData(5, getY() - 2);
-                            setData(6, getX() - 1);
                             setData(0, 3);
                             setData(1,0);
                             setData(2, 11);
@@ -217,26 +211,45 @@ public class harryPotter extends Robot
                             //4.0 down
                             if (getData(1) == 0) {
                                 setData(1, 4);
+                                setData(4, getX() - 4);
+                                setData(5, getY() - 1);
                                 down();
                             }
                             //4.1 left
                             else if (getData(1) == 1) {
                                 setData(1, 4);
+                                setData(4, getX() - 10);
+                                setData(5, getY() + 4);
                                 left();
                             }
                             //4.2 up
                             else if (getData(1) == 2) {
                                 setData(1, 4);
+                                setData(4, getX() - 4);
+                                setData(5, getY() + 10);
                                 up();
                             }
                             //4.3 right
                             else if (getData(1) == 3) {
                                 setData(1, 4);
+                                setData(4, getX() + 1);
+                                setData(5, getY() + 4);
                                 right();
                             }
                             //4.4 get to top left corner of room(use coordinates
                             else {
-                                
+                                if (getY() != getData(5)) {
+                                    up();
+                                }
+                                else {
+                                    if (getX() != getData(4)) {
+                                        left();
+                                    }
+                                    else {
+                                        setData(0, 5);
+                                        setData(1, 0);
+                                    }
+                                }
                             }
                         }
                     }

@@ -54,7 +54,7 @@ public class MyWorld extends World
         }else if (backTrack.size() == 0 && !robotAdded){
            robotAdded = true;
             addObject(new Lefthanded(bd), 1,1); //<<<<<< Change this to your robot.
-            
+            addObject(new Wanderer(bd), 1,1);
         }
         System.out.println(steps);
     }

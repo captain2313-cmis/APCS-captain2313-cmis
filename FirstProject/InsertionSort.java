@@ -21,7 +21,18 @@ public class InsertionSort
         for (int i1 = 1; i1 < array.length; i1++) {
             boolean sorted = false;
             for (int i2 = 0; i2 < i1 && !sorted; i2++) {
-                
+                if (array[i1] < array[i2]) {
+                    int hold1 = array[i2];
+                    array[i2] = array[i1];
+                    i2++;
+                    int hold2 = array[i2 + 1];
+                    for (; i2 < i1; i2++) {
+                        array[i2] = hold1;
+                        hold1 = hold2;
+                        hold2 = array[i2 + 1];
+                    }
+                    sorted = true;
+                }
             }
         }
     }

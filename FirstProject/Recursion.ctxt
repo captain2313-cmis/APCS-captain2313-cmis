@@ -2,4 +2,8 @@
 comment0.target=Recursion
 comment1.params=sym\ times
 comment1.target=java.lang.String\ stringy(java.lang.String,\ int)
-numComments=2
+comment2.params=base\ power
+comment2.target=int\ pow(int,\ int)
+comment3.params=base
+comment3.target=int\ factorial(int)
+numComments=4

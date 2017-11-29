@@ -1,6 +1,10 @@
 
 public class RecursiveMethods  {
-    //1
+    String alph = "abcde";
+    int index = 0;
+    System.out.print(alph.charAt(index));
+    
+    //1[INCOMPLETE]
     public static String grid(int w, int h, String symbol) {
         if (w == 1) {
             if (h == 1) {
@@ -20,4 +24,19 @@ public class RecursiveMethods  {
             }
         }
     }
+    
+    //2
+    public static int mul(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        else {
+            return a + mul(a, b - 1);
+        }
+    }
+    
+    //3
+    /*public static int bintToDec(String b) {
+        if (
+    }*/
 }

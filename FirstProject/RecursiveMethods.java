@@ -1,12 +1,8 @@
 
 public class RecursiveMethods  {
-    String alph = "abcde";
-    int index = 0;
-    System.out.print(alph.charAt(index));
-    
     //1[INCOMPLETE]
     public static String grid(int w, int h, String symbol) {
-        if (w == 1) {
+        /*if (w == 1) {
             if (h == 1) {
                 return symbol;
             }
@@ -22,6 +18,16 @@ public class RecursiveMethods  {
             else {
                 return grid(w, h - 1, symbol + grid(w - 1, h, symbol));
             }
+        }*/
+        int position = w;
+        if (h == 0 && position == 0) {
+            return symbol;
+        }
+        else if (position == 0) {
+            return "\n" + grid(w, h - 1, symbol);
+        }
+        else {
+            return symbol + grid(position - 1, h, symbol);
         }
     }
     
@@ -35,7 +41,7 @@ public class RecursiveMethods  {
         }
     }
     
-    //3
+    //3[INCOMPLETE]
     /*public static int bintToDec(String b) {
         if (
     }*/
